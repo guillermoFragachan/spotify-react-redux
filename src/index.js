@@ -7,11 +7,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from 'react-redux'
 import configureStore from './store'
 import './css/player.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 
 ReactDOM.render(
 
   <React.StrictMode>
+
         <Provider store={configureStore }>
         <App />
 

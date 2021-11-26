@@ -12,7 +12,8 @@ export const initialState = {
         img:''
         
         
-    }
+    },
+    playlist:[],
     
 
 }

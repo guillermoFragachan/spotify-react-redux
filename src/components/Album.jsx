@@ -1,6 +1,7 @@
 import React from "react";
 import Song from "./Song";
 import { Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class Album extends React.Component {
   state = {
@@ -46,7 +47,10 @@ class Album extends React.Component {
             <div>PODCAST</div>
             <div>MOODS AND GENRES</div>
             <div>NEW RELEASES</div>
-            <div>DISCOVER</div>
+            <Link to={"/playlist"}>
+        <div>PLAYLIST</div>
+
+      </Link>
           </div>
         </Row>
         <Row>
@@ -75,6 +79,7 @@ class Album extends React.Component {
           <div className="col-md-8 p-5">
             <Row>
               <div className="col-md-10 mb-5" id="trackList">
+                
                 {this.state.songs.map((song) => (
                   <Song track={song} key={song.id} img={this.state.album.cover} />
                 ))}
