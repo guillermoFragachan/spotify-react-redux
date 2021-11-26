@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <div className="col-2">
+      <div className="sidebar-size">
         <nav
           className="navbar navbar-expand-md navbar-white bg-navbar fixed-left justify-content-between"
           id="sidebar"
