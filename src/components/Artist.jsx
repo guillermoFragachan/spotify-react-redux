@@ -1,6 +1,8 @@
 import React from "react";
 import AlbumCard from "./AlbumCard";
 import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 
 class Artist extends React.Component {
   state = {
@@ -62,7 +64,10 @@ class Artist extends React.Component {
             <div>PODCAST</div>
             <div>MOODS AND GENRES</div>
             <div>NEW RELEASES</div>
-            <div>DISCOVER</div>
+            <Link to={"/playlist"}>
+        <div>PLAYLIST</div>
+
+      </Link>
           </div>
         </Row>
 
