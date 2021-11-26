@@ -1,6 +1,8 @@
 import React from "react";
 import AlbumCard from "./AlbumCard";
 import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 import {getSongsAction} from '../store/actions'
 import { connect } from "react-redux";
 
@@ -104,7 +106,10 @@ class Home extends React.Component {
             <div>PODCAST</div>
             <div>MOODS AND GENRES</div>
             <div>NEW RELEASES</div>
-            <div>DISCOVER</div>
+            <Link to={"/playlist/"}>
+        <div>PLAYLIST</div>
+
+      </Link>
           </div>
         </Row>
         {this.props.searchResults.length > 0 && (

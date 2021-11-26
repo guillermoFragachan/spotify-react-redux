@@ -12,7 +12,16 @@ export const initialState = {
       category: [],
       rockSongs: [],
       popSongs: []
-      }
+      },
+
+    songInformation:{
+        img:''
+        
+        
+    },
+    playlist:[],
+    
+
 }
 
 
