@@ -10,7 +10,9 @@ const mainReducer = (state = initialState, action) => {
       return {
         ...state,
         songs: {
-          rockSongs: action.payload
+          rockSongs: action.payload,
+          popSongs: action.payload,
+          category: [...state.songs.category],
         }
 
       }
