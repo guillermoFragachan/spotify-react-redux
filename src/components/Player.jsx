@@ -1,6 +1,9 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 
+
+
+
 const Player = () => (
   <div className="container-fluid fixed-bottom bg-container pt-1">
     <Row>
