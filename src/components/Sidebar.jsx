@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import {MdOutlineFavorite} from "react-icons/md"
+import Likes from "./Likes";
 
 class Sidebar extends React.Component {
   state = {
@@ -47,6 +49,11 @@ class Sidebar extends React.Component {
                       Library
                     </Link>
                   </li>
+                  <li>
+                    <Link to="/likes" className="nav-item nav-link" element={<Likes />}>
+                     <MdOutlineFavorite size="25" /> Your Favourites
+                    </Link>
+                    </li>
                   {this.props.location.pathname === "/" && (
                     <li>
                       <div className="input-group mt-3">
