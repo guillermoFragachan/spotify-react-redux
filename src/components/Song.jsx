@@ -4,6 +4,8 @@ import {BsSuitHeart,BsSuitHeartFill} from "react-icons/bs"
 import { addToLikes, removeFromLikes } from "../store/actions";
 import {connect} from "react-redux"
 import {Link} from "react-router-dom"
+import { connect } from "react-redux";
+import { getSongInformation, getSongImage, addToPlaylist } from "../store/actions/index.js";
 
 const mapStateToProps = (s) => s
 
@@ -13,7 +15,13 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 
-const Song = ({ track, likes, addToLikesFeature, removeFromLikesFeature }) => {
+const Song = ({ track, likes, 
+  addToLikesFeature, 
+  removeFromLikesFeature,
+  getSongInfo,
+  img,
+  getImage
+}) => {
 
   const ifLiked = likes.elements.includes(track.title)
   const toggleLike = () => {
@@ -33,45 +41,18 @@ return(
       )
       }
     </span>
-    <span className="card-title trackHover px-3" style={{ color: "white" }}>
-      {track.title} 
-import { connect } from "react-redux";
-import { getSongInformation, getSongImage, addToPlaylist } from "../store/actions/index.js";
-
-const mapStateToProps = (state) => ({
-  songInformation: state,
-});
-const mapDispatchToProps = (dispatch) => ({
-  getSongInfo: (track) => {
-    dispatch(getSongInformation(track));
-  },
-  getImage: (img) => {
-    dispatch(getSongImage(img));
-  },
-  addToPlaylist: (selectedSong)=>{
-    dispatch(addToPlaylist(selectedSong))
-  }
-});
-
-const Song = ({ getSongInfo, track, img, getImage, addToPlaylist }) => (
-  <div className="py-3 trackHover">
-   
-    <span className="card-title trackHover px-3" style={{ color: "white" }}>
+   <div className="py-3 trackHover">
+   <span className="card-title trackHover px-3" style={{ color: "white" }}>
       {track.title}
     </span>
     <a
-      
-      onClick={() => {
+        onClick={() => {
         getSongInfo(track);
         getImage(img);
       }}
     >
       <img className="icon" src="/playerbuttons/Play.png" alt="shuffle" />
     </a>
-
-
-
-
     <a style={{color:"white", marginLeft:"20px"}} onClick={()=>{
       addToPlaylist(track)
     }}>
@@ -88,7 +69,7 @@ const Song = ({ getSongInfo, track, img, getImage, addToPlaylist }) => (
         ? "0" + (parseInt(track.duration) % 60)
         : parseInt(track.duration) % 60}
     </small>
-
+</div>
   </div>
 )
 }
