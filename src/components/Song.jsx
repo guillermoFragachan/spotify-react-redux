@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux'
-import {getSongInformation} from '../store/actions/index.js'
+import {getSongInformation, getSongImage} from '../store/actions/index.js'
 
 
 const mapStateToProps = (state) => ({
@@ -9,13 +9,22 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getSongInfo:(track)=>{
     dispatch(getSongInformation(track))
+  },
+  getImage:(img)=>{
+    dispatch(getSongImage(img))
   }
 })
+   
 
-const Song = ({getSongInfo, track }) => (
+
+
+const Song = ({getSongInfo, track, img, getImage  }) => (
+  
   <div className="py-3 trackHover" onClick={()=>{
+
     getSongInfo(track)
-    // console.log(track)
+    getImage(img)
+
   }}>
     <span className="card-title trackHover px-3" style={{ color: "white" }}>
       {track.title}

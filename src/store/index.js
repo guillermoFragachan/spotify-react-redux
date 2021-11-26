@@ -9,8 +9,11 @@ const aComposeThatAlwaysWorks = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || c
 
 export const initialState = {
     songInformation:{
+        img:''
+        
         
     }
+    
 
 }
 
